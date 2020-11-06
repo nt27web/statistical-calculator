@@ -11,4 +11,4 @@ def variance_1(data):
         total = (a-x1)**2
         data1.append(total)
     total1=sum(data1)
-    return division(num_values,total1)
+    return division(num_values-1,total1)
