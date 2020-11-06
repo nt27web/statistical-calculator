@@ -3,21 +3,26 @@ from numpy.random import seed
 from Statistics.Statistics import Statistics
 import random
 import statistics
-
+import pandas as pd
+import numpy as np
+from scipy import stats
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(5)
+
         self.testData = []
         for i in range(0, 10):
             num = random.randint(0, 15)
             self.testData.append(num)
         print(self.testData)
+
         self.mean_value = statistics.mean(self.testData)
         self.median_value = statistics.median(self.testData)
         self.mode_value = statistics.mode(self.testData)
         self.variance_value = statistics.variance(self.testData)
         self.standard_deviation_value=statistics.stdev(self.testData)
+        self.z_score_value= statistics.stdev(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -52,6 +57,10 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(standard_deviation, self.standard_deviation_value)
         variance = self.statistics.stats_mode(self.testData)
         self.assertEqual(variance, self.variance_value)
+    def test_z_score(self):
+        z_score = self.statistics.stats_z_score(self.testData)
+        self.assertEqual(z_score, self.z_score_value)
+
 
         
 if __name__ == '__main__':
