@@ -11,4 +11,4 @@ def get_z_score(data):
         a = subtraction(value_mean, data[i])
         b = division_float(get_standard_deviation(data), a)
         z.append(b)
-    return z
+    return round(z,1)

@@ -6,6 +6,7 @@ import statistics
 import pandas as pd
 import numpy as np
 from scipy import stats
+from array import *
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -22,7 +23,7 @@ class MyTestCase(unittest.TestCase):
         self.mode_value = statistics.mode(self.testData)
         self.variance_value = statistics.variance(self.testData)
         self.standard_deviation_value=statistics.stdev(self.testData)
-        self.z_score_value= statistics.stdev(self.testData)
+        self.z_score_value = stats.zscore(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -50,16 +51,19 @@ class MyTestCase(unittest.TestCase):
 
     def test_variance_calculator(self):
         variance = self.statistics.stats_variance(self.testData)
-        self.assertEqual(variance, self.variance_value)
+        self.assertEqual(variance, round((self.variance_value),1))
 
     def test_standard_deviation_calculator(self):
         standard_deviation = self.statistics.stats_standard_deviation(self.testData)
-        self.assertEqual(standard_deviation, self.standard_deviation_value)
-        variance = self.statistics.stats_mode(self.testData)
-        self.assertEqual(variance, self.variance_value)
+        self.assertEqual(standard_deviation, round((self.standard_deviation_value),1))
+
     def test_z_score(self):
         z_score = self.statistics.stats_z_score(self.testData)
-        self.assertEqual(z_score, self.z_score_value)
+        #a = np.array(self.testData)
+        #self.z_score_value = stats.zscore(self.testData)
+        print(self.z_score_value)
+        print(z_score)
+        self.assertEqual(z_score, round((self.z_score_value),1))
 
 
         
