@@ -13,7 +13,7 @@ class PopulationSampler(RandomGenerator):
 
     # Simple random sampling
     def get_simple_random_sampling(self, size, seed, version, data):
-        return self.stats.get_rand_num_list_w_seed(size, seed, version, data)
+        return self.get_rand_num_list_w_seed(size, seed, version, data)
 
     # Confidence Interval For a Sample
     def get_confidence_interval(self, data):
@@ -52,7 +52,7 @@ class PopulationSampler(RandomGenerator):
     # How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
     def get_sample_size_by_confidence_interval_and_width(self, data):
         # step 1
-        za_2 = self.stats.stats_z_score(self.stats.divide(self.get_confidence_interval(self, data), 2))
+        za_2 = self.stats.stats_z_score(self.stats.divide(self.get_confidence_interval(data)[0], 2))
         e = self.stats.divide(self.get_margin_of_error(self, data), 2)
         p = 0.5
         q = 1-p
