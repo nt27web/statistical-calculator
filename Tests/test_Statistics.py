@@ -16,6 +16,7 @@ class MyTestCase(unittest.TestCase):
         self.mean_value = statistics.mean(self.testData)
         self.median_value = statistics.median(self.testData)
         self.mode_value = statistics.mode(self.testData)
+        self.variance_value = statistics.variance(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -31,7 +32,17 @@ class MyTestCase(unittest.TestCase):
         mode = self.statistics.mode(self.testData)
         self.assertEqual(mode, self.mode_value)
 
+    def test_median_calculator(self):
+        median = self.statistics.median_1(self.testData)
+        self.assertEqual(median, self.median_value)
+
+    def test_mode_calculator(self):
+        mode = self.statistics.mode(self.testData)
+        self.assertEqual(mode, self.mode_value)
+
+    def test_variance_calculator(self):
+        variance = self.statistics.mode(self.testData)
+        self.assertEqual(variance, self.variance_value)
 
 if __name__ == '__main__':
     unittest.main()
-    
