@@ -17,4 +17,4 @@ def get_variance(data):
         data1.append(total)
     for i in range(0, len(data1)):
         total1 = total1 + addition(0, data1[i])
-    return division(num_values - 1, total1)
+    return round(division(num_values - 1, total1),1)
