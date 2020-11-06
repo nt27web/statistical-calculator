@@ -1,10 +1,9 @@
 import unittest
 from numpy.random import seed
-from numpy.random import randint
 from Statistics.Statistics import Statistics
-import pprint
 import random
 import statistics
+
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
