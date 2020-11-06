@@ -1,6 +1,7 @@
 import unittest
 from numpy.random import seed
 from Statistics.Statistics import Statistics
+import pprint
 import random
 import statistics
 
@@ -17,6 +18,7 @@ class MyTestCase(unittest.TestCase):
         self.median_value = statistics.median(self.testData)
         self.mode_value = statistics.mode(self.testData)
         self.variance_value = statistics.variance(self.testData)
+        self.standard_deviation_value=statistics.stdev(self.testData)
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -41,8 +43,15 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(mode, self.mode_value)
 
     def test_variance_calculator(self):
+        variance = self.statistics.variance(self.testData)
+        self.assertEqual(variance, self.variance_value)
+
+    def test_standard_deviation_calculator(self):
+        standard_deviation = self.statistics.standard_deviation(self.testData)
+        self.assertEqual(standard_deviation, self.standard_deviation_value)
         variance = self.statistics.mode(self.testData)
         self.assertEqual(variance, self.variance_value)
 
+        
 if __name__ == '__main__':
     unittest.main()
