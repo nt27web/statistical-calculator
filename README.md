@@ -14,5 +14,10 @@ No. |Task | Short Description | Developer
 7| Random Generator | Generate a random number without a seed between a range of two numbers, Generate a random number with a seed between a range of two numbers, Generate a list of N random numbers with a seed and between a range of numbers, Select a random item from a list, Set a seed and randomly. select the same value from a list, Select N number of items from a list without a seed, Select N number of items from a list with a seed | Nayana
 8| Readme | Task breakdown, description, formulas and result | Nayana
 
-	
+## Function list
+No. | Function | Short Description  Formula | Example | Result 
+------- | --------------- | ---------- | ----------- | ----------- | 
+1 | 
+
+
 
