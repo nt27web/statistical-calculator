@@ -2,7 +2,7 @@ from Calculator.Addition import addition
 from Calculator.Division import division
 
 
-def mean1(data):
+def get_mean(data):
     num_values = len(data)
     total = 0
     for num in data:
