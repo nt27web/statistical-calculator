@@ -3,13 +3,12 @@
 #Statistical-calculator
 
 ##Task list
-
-Task / Short Description / Developer
-------- / --------------- / ---------- / 
-1 / Class Diagram / An outline showing how each of the statistical and calculator functions relates to each other / Nayana 
-2 / Project management board / Development task breakdown to the function level / Nayana
-3 / Descriptive Statistics functions / functions- mean, median, mode, standard Deviation, Z-Score / Sourav
-4 / Population Sampling / 
-5 / Random Generator / 
+No. |Task | Short Description | Developer 
+------- | --------------- | ---------- | ----------- | 
+1| Class Diagram | An outline showing how each of the statistical and calculator functions relates to each other | Nayana 
+2| Project management board | Development task breakdown to the function level | Nayana
+3| Descriptive Statistics functions | functions- mean, median, mode, standard Deviation, Z-Score | Sourav
+4| Population Sampling | hhkhk | Nayana
+5| Random Generator | hjkhlh | Nayana
 	
 
