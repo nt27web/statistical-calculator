@@ -1,6 +1,5 @@
 import unittest
 from numpy.random import seed
-from numpy.random import randint
 from Statistics.Statistics import Statistics
 import pprint
 import random
@@ -48,4 +47,3 @@ class MyTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
