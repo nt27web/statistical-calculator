@@ -3,6 +3,8 @@ from Calculator.Division import division
 from Calculator.Addition import addition
 from Calculator.Subtraction import subtraction
 from Calculator.Square import square
+
+
 def get_variance(data):
     x1 = get_mean(data)
     num_values = len(data)
