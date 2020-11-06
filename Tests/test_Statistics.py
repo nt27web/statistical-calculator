@@ -35,7 +35,7 @@ class MyTestCase(unittest.TestCase):
         mode = self.statistics.mode(self.testData)
         self.assertEqual(mode, self.mode_value)
     def test_variance_calculator(self):
-        variance= self.statistics.mode(self.testData)
+        variance= self.statistics.variance(self.testData)
         self.assertEqual(variance, self.variance_value)
 
 
