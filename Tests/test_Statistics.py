@@ -1,7 +1,6 @@
 import unittest
 from numpy.random import seed
 from Statistics.Statistics import Statistics
-import pprint
 import random
 import statistics
 
@@ -25,31 +24,33 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean_calculator(self):
-        mean = self.statistics.mean(self.testData)
+        mean = self.statistics.stats_mean(self.testData)
         self.assertEqual(mean, self.mean_value)
+
     def test_median_calculator(self):
-        median = self.statistics.median_1(self.testData)
+        median = self.statistics.stats_median(self.testData)
         self.assertEqual(median, self.median_value)
+
     def test_mode_calculator(self):
-        mode = self.statistics.mode(self.testData)
+        mode = self.statistics.stats_mode(self.testData)
         self.assertEqual(mode, self.mode_value)
 
     def test_median_calculator(self):
-        median = self.statistics.median_1(self.testData)
+        median = self.statistics.stats_median(self.testData)
         self.assertEqual(median, self.median_value)
 
     def test_mode_calculator(self):
-        mode = self.statistics.mode(self.testData)
+        mode = self.statistics.stats_mode(self.testData)
         self.assertEqual(mode, self.mode_value)
 
     def test_variance_calculator(self):
-        variance = self.statistics.variance(self.testData)
+        variance = self.statistics.stats_variance(self.testData)
         self.assertEqual(variance, self.variance_value)
 
     def test_standard_deviation_calculator(self):
-        standard_deviation = self.statistics.standard_deviation(self.testData)
+        standard_deviation = self.statistics.stats_standard_deviation(self.testData)
         self.assertEqual(standard_deviation, self.standard_deviation_value)
-        variance = self.statistics.mode(self.testData)
+        variance = self.statistics.stats_mode(self.testData)
         self.assertEqual(variance, self.variance_value)
 
         
