@@ -50,8 +50,6 @@ class MyTestCase(unittest.TestCase):
     def test_standard_deviation_calculator(self):
         standard_deviation = self.statistics.stats_standard_deviation(self.testData)
         self.assertEqual(standard_deviation, self.standard_deviation_value)
-        variance = self.statistics.stats_mode(self.testData)
-        self.assertEqual(variance, self.variance_value)
 
         
 if __name__ == '__main__':
