@@ -1,7 +1,5 @@
-
-def mode1(data):
+def get_mode(data):
     data1 = data
-    print(data1)
     maximum = data1.count(data1[0])
     m = data1[0]
     for i in range(1, len(data1)):
