@@ -17,6 +17,7 @@ class Statistics(Calculator):
         return self.result
 
     def stats_median(self, data):
+        data.sort()
         self.result = get_median(data)
         return self.result
 
