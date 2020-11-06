@@ -2,6 +2,8 @@ from Calculator.Subtraction import subtraction
 from Calculator.Division import division_float
 from Statistics.Mean import mean1
 from Statistics.StandardDeviation import standard_deviation1
+
+
 def z_score1(data):
     value_mean=mean1(data)
     z=[]
