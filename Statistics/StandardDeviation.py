@@ -4,4 +4,4 @@ from Calculator.SquareRoot import square_root
 
 def get_standard_deviation(data):
     value = get_variance(data)
-    return square_root(value)
+    return round(square_root(value),1)
