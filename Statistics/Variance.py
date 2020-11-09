@@ -4,6 +4,7 @@ from Calculator.Addition import addition
 from Calculator.Square import square
 from Calculator.Subtraction import subtraction
 
+
 def get_variance(data):
     x1 = get_mean(data)
     num_values = len(data)
@@ -17,4 +18,4 @@ def get_variance(data):
         data1.append(total)
     for i in range(0, len(data1)):
         total1 = total1 + addition(0, data1[i])
-    return round(division(num_values - 1, total1),1)
+    return round(division(num_values - 1, total1), 1)
