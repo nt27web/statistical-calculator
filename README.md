@@ -31,4 +31,11 @@ No. | Function | Short Description  Formula | Example | Result
 12 | z_score | z=(data[i]-mean(data))/standard deviation | z=(1-3)/1.414 |data=[1,2,3,4,5] -1.414
 
 
+<object data="Diagram_Nayana.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="Diagram_Nayana.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="Diagram_Nayana.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+
 
