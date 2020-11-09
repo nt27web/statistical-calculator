@@ -27,13 +27,24 @@ class PopulationSampler(RandomGenerator):
 
         # Margin of Error
     def get_margin_of_error(self, data):
-        margin_of_error = self.stats.divide(
+
+        #z_critical = stats.norm.ppf(q=0.975)  # Get the z-critical value*
+        sd = self.stats.stats_standard_deviation(data)
+        z_score = self.stats.stats_median(self.stats.stats_z_score(data))
+        #print("z_score - ")
+        #print(z_score)
+
+        m_result = self.stats.multiply(sd, z_score)
+        sr_result = self.stats.square_root(len(data))
+        margin_of_error = self.stats.divide(sr_result, m_result)
+
+        """margin_of_error = self.stats.divide(
                                 self.stats.multiply(
                                         self.stats.stats_z_score(data)
                                             , (self.stats.stats_standard_deviation(data))
                                 )
                                 , self.stats.square_root(len(data))
-        )
+        )"""
         return margin_of_error
 
     # Cochran’s Sample Size Formula
