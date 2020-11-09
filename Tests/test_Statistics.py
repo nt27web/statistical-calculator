@@ -45,13 +45,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_variance_calculator(self):
         variance = self.statistics.stats_variance(self.testData)
-        self.assertEqual(variance, self.variance_value)
+        self.assertEqual(variance, round((self.variance_value),1))
 
     def test_standard_deviation_calculator(self):
         standard_deviation = self.statistics.stats_standard_deviation(self.testData)
-        self.assertEqual(standard_deviation, self.standard_deviation_value)
-        variance = self.statistics.stats_mode(self.testData)
-        self.assertEqual(variance, self.variance_value)
+        self.assertEqual(standard_deviation, round((self.standard_deviation_value),1))
 
         
 if __name__ == '__main__':
