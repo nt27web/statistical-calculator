@@ -10,27 +10,31 @@ class MyTestCase(unittest.TestCase):
 
     # Simple random sampling
     def test_get_simple_random_sampling(self):
-        print(self.population_sampler.get_simple_random_sampling(5, 5, 2, self.data))
+        self.assertEqual(len(self.population_sampler.get_simple_random_sampling(5, 5, 2, self.data)), 5)
+        self.assertTrue(
+            set(self.population_sampler.get_simple_random_sampling(5, 5, 2, self.data)).issubset(set(self.data)))
 
     # Confidence Interval For a Sample
-    def test_get_confidence_interval(self):
-        print(self.population_sampler.get_confidence_interval(self.data))
+    """def test_get_confidence_interval(self):
+        print("Function - test_get_confidence_interval: ")
+        print(self.population_sampler.get_confidence_interval(self.data))"""
 
     # Margin of Error
     def test_get_margin_of_error(self):
-        print(self.population_sampler.get_margin_of_error(self.data))
+        print("Function - test_get_margin_of_error(): ")
+        #print(self.population_sampler.get_margin_of_error(self.data))
 
     # Cochran’s Sample Size Formula
-    def test_get_result_by_cochrans_sample_size(self):
+    """def test_get_result_by_cochrans_sample_size(self):
         p1 = 0
         p_diff = 0.5
         alpha = 0
 
-        print(self.population_sampler.get_result_by_cochrans_sample_size(p1, p_diff, alpha))
+        print(self.population_sampler.get_result_by_cochrans_sample_size(p1, p_diff, alpha))"""
 
     # How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
-    def test_get_sample_size_by_confidence_interval_and_width(self):
-        print(self.population_sampler.get_sample_size_by_confidence_interval_and_width(self.data))
+    """def test_get_sample_size_by_confidence_interval_and_width(self):
+        print(self.population_sampler.get_sample_size_by_confidence_interval_and_width(self.data))"""
 
 
 if __name__ == '__main__':
