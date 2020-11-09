@@ -12,7 +12,7 @@ class MyTestCase(unittest.TestCase):
         for i in range(0, 10):
             num = random.randint(0, 15)
             self.testData.append(num)
-        print(self.testData)
+
         self.mean_value = statistics.mean(self.testData)
         self.median_value = statistics.median(self.testData)
         self.mode_value = statistics.mode(self.testData)
