@@ -60,7 +60,7 @@ class MyTestCase(unittest.TestCase):
 
     # square root test2 - accurate upto 9 decimal points
     def test_square_root_method_calculator_success_decimal(self):
-        self.assertEqual(self.calculator.square_root(39.99), 6.3237647)
+        self.assertEqual(self.calculator.square_root(39.99), 6.323764702)
 
     def test_subtraction(self):
         test_data = CsvReader("Tests/Data/UnitTestSubtraction.csv").data
@@ -73,9 +73,10 @@ class MyTestCase(unittest.TestCase):
     def test_addition(self):
         test_data = CsvReader("Tests/Data/UnitTestAddition.csv").data
         for row in test_data:
-            result = float(row['Result'])
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), result)
-            self.assertEqual(self.calculator.result, result)
+            result_float = float(row['Result'])
+            self.assertEqual(self.calculator.add(float(row['Value 1']), float(row['Value 2'])), result_float)
+            result_int = int(row['Result'])
+            self.assertEqual(self.calculator.add(int(row['Value 1']), int(row['Value 2'])), result_int)
 
     def test_multiplication(self):
         test_data = CsvReader("Tests/Data/UnitTestMultiplication.csv").data
