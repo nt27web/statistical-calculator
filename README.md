@@ -17,22 +17,18 @@ No. |Task | Short Description | Developer
 ## Function list
 No. | Function | Short Description  Formula | Example | Result 
 ------- | --------------- | ---------- | ----------- | ----------- | 
-1 | Addition | float(a) + float(b) | float(12)+float(3) | 15
-2 | Subtraction| float(b)-float(a) | float(13)-float(2) | 11
-3 | Multiplication| float(a) * float(b) |float(5)* float(2) | 10
-4 | Division | float(b)/float(a) | float(12)/float(4) | 3
-5 | Square | float(a)* float(a) | float(5)* float(5) |25
-6 | Sqaureroot | round(math.sqrt(float(a)), 8)| math.sqrt(635)| 25.19920633
-data=[1,2,3,4,5]
-7 | Mean | sum(data)/len(data)| 15/3 | 3
-8 | Median |  {(n + 1) ÷ 2}th , n is len(data)| (5+1)/2 | 3
-data=[1,2,5,1,2,3,6,2,9,10,2]
-9 | Mode | max(data.count) | max(data.count) | 2
-data=[1,2,3,4,5]
-10 | Variance | s=((sum(x-x")* * 2/len(data))|((sum(data[i]-mean(data))* * 2/len(data))| 2
+1 | Addition | a + b | 12+3 | 15
+2 | Subtraction| b-a | 13-2 | 11
+3 | Multiplication| a * b |5 * 2 | 10
+4 | Division | b/a | 12/4 | 3
+5 | Square | a * a | 5 * 5 | 25
+6 | Sqaureroot | math.sqrt(a)| math.sqrt(635)| 25.19920633
+7 | Mean | sum(data)/len(data)| 15/3 |data=[1,2,3,4,5] 3
+8 | Median |  {(n + 1) ÷ 2}th , n is len(data)| (5+1)/2 |data=[1,2,3,4,5] 3
+9 | Mode | max(data.count) | max(data.count) |data=[1,2,5,1,2,3,6,2,9,10,2] 2
+10 | Variance | s=((sum(x-x")* * 2/len(data))|((sum(data[i]-mean(data))* * 2/len(data))| data=[1,2,3,4,5] 2
 11 | Standard deviation | sqrt(variance) | sqrt(2) | 1.414
-data=[1,2,3,4,5]
-12 | z_score | z=(data[i]-mean(data))/standard deviation | z=(1-3)/1.414 | -1.414
+12 | z_score | z=(data[i]-mean(data))/standard deviation | z=(1-3)/1.414 |data=[1,2,3,4,5] -1.414
 
 
 
