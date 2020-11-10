@@ -1,5 +1,8 @@
 import unittest
 from Statistics.PopulationSampler import PopulationSampler
+import statistics
+import numpy as np
+from scipy import stats
 
 
 class MyTestCase(unittest.TestCase):
@@ -15,14 +18,29 @@ class MyTestCase(unittest.TestCase):
             set(self.population_sampler.get_simple_random_sampling(5, 5, 2, self.data)).issubset(set(self.data)))
 
     # Confidence Interval For a Sample
-    """def test_get_confidence_interval(self):
+    def test_get_confidence_interval(self):
         print("Function - test_get_confidence_interval: ")
-        print(self.population_sampler.get_confidence_interval(self.data))"""
+        print(self.population_sampler.get_confidence_interval(self.data))
 
     # Margin of Error
     def test_get_margin_of_error(self):
-        print("Function - test_get_margin_of_error(): ")
-        #print(self.population_sampler.get_margin_of_error(self.data))
+        result = self.population_sampler.get_margin_of_error(self.data)
+
+        sd = statistics.stdev(self.data)
+        print("sd = ")
+        print(sd)
+        z = 1.96 #stats.zscore(self.data)
+        print("Z = ")
+        print(z)
+        se = sd / statistics.sqrt(len(self.data))
+        print("se = ")
+        print(se)
+        moe = z * se
+        print("Result = ")
+        print(result)
+        print("MOE = ")
+        print(moe)
+        self.assertEqual(result, moe)
 
     # Cochran’s Sample Size Formula
     """def test_get_result_by_cochrans_sample_size(self):
