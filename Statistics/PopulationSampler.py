@@ -1,7 +1,6 @@
 from Statistics.RandomGenerator import RandomGenerator
 from Statistics.Statistics import Statistics
 
-from scipy import stats
 import scipy.stats as st
 
 
@@ -26,45 +25,30 @@ class PopulationSampler(RandomGenerator):
         return conf_interval
 
         # Margin of Error
-    def get_margin_of_error(self, data):
+    def get_margin_of_error(self, data, cl):
 
-        #z_critical = stats.norm.ppf(q=0.975)  # Get the z-critical value*
         sd = self.stats.stats_standard_deviation(data)
-        z_score = self.stats.stats_median(self.stats.stats_z_score(data))
-        #print("z_score - ")
-        #print(z_score)
+        z_score = st.norm.ppf(1-(1-cl)/2)
+        se = self.stats.divide(self.stats.square_root(len(data)), sd)
+        margin_of_error = self.stats.multiply(z_score, se)
 
-        m_result = self.stats.multiply(sd, z_score)
-        sr_result = self.stats.square_root(len(data))
-        margin_of_error = self.stats.divide(sr_result, m_result)
-
-        """margin_of_error = self.stats.divide(
-                                self.stats.multiply(
-                                        self.stats.stats_z_score(data)
-                                            , (self.stats.stats_standard_deviation(data))
-                                )
-                                , self.stats.square_root(len(data))
-        )"""
         return margin_of_error
 
     # Cochran’s Sample Size Formula
-    def get_result_by_cochrans_sample_size(self, p1, p_diff, alpha):
-        if p_diff <= 0:
-            raise ValueError("p_diff must be > 0")
-        n = 1
-        while True:
-            z = self.stats.stats_z_score(p1, p1 + p_diff, n1=n, n2=n)
-            p = 1 - stats.norm.cdf(z)
-            if p < alpha:
-                break
-            n += 1
-        return n
+    def get_result_by_cochrans_sample_size(self, p, e, cl):
+        z = st.norm.ppf(1-(1-cl)/2)
+        print(self.stats.multiply(self.stats.multiply(self.stats.square(z), p), self.stats.square(e)))
+
+        n = self.stats.multiply(self.stats.multiply(self.stats.square(z), p), self.stats.square(e))/(1-p)
+        print(n)
+        return round(n)
 
     # How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
     def get_sample_size_by_confidence_interval_and_width(self, data):
         # step 1
-        za_2 = self.stats.stats_z_score(self.stats.divide(self.get_confidence_interval(data)[0], 2))
-        e = self.stats.divide(self.get_margin_of_error(self, data), 2)
+        cl = 0.95
+        za_2 = st.norm.ppf(1-(1-cl)/2)
+        e = 0.5
         p = 0.5
         q = 1-p
         # step 2
